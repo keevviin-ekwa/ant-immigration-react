@@ -2,13 +2,7 @@ import { useState } from "react";
 import { PopupModal } from "react-calendly";
 
 function Home() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [root, setRoot] = useState<HTMLElement | null>(null);
-  useEffect(() => {
-    setRoot(document.getElementById("root") ?? document.getElementById("__next") ?? document.body);
-  }, []);
-  if (!root) return null;
-  
+   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       <div className="paginacontainer">
@@ -80,7 +74,7 @@ function Home() {
                       url="https://calendly.com/ant-immigration-info/30min"
                       onModalClose={() => setIsOpen(false)}
                       open={isOpen}
-                      rootElement={root}
+                      rootElement={document.getElementById("root")!}
                     />
                   </div>
                   <div className="mobile-menu-bar d-lg-none">
@@ -1563,7 +1557,3 @@ function Home() {
 }
 
 export default Home;
-function useEffect(arg0: () => void, arg1: never[]) {
-  throw new Error("Function not implemented.");
-}
-
