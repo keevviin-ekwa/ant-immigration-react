@@ -8,7 +8,7 @@ function Home() {
     setRoot(document.getElementById("root") ?? document.getElementById("__next") ?? document.body);
   }, []);
   if (!root) return null;
-  ; c
+  
   return (
     <div>
       <div className="paginacontainer">
